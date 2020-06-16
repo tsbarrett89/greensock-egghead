@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"greensock-egghead.9ad09f98.css","sourceRoot":"..","sourcesContent":["body {\n    margin: 0;\n}\n\n#box {\n    width: 25px;\n    height: 25px;\n    background-color: deepskyblue;\n}"]}
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA;AACA;AACA","file":"greensock-egghead.9ad09f98.css","sourceRoot":"..","sourcesContent":["body {\n    margin: 0;\n}"]}

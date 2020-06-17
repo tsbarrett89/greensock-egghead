@@ -5629,6 +5629,18 @@ document.addEventListener('wheel', function (event) {
     });
   }
 });
+document.addEventListener('click', function (event) {
+  var x = event.x,
+      y = event.y;
+
+  _gsap.TweenMax.fromTo('#box', 1, {
+    x: x,
+    y: y
+  }, {
+    x: 200,
+    y: 200
+  });
+});
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -33,3 +33,8 @@ document.addEventListener('wheel', event => {
     }
     
 })
+
+document.addEventListener('click', event => {
+    const { x, y } = event
+    TweenMax.fromTo('#box', 1, { x, y }, { x: 200, y: 200 })
+})

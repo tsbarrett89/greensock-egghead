@@ -5618,6 +5618,17 @@ document.getElementById("box").addEventListener('click', function () {
     timeline.resume();
   }
 });
+document.addEventListener('wheel', function (event) {
+  if (event.wheelDelta > 0) {
+    _gsap.TweenMax.to(timeline, .25, {
+      progress: "+=0.1"
+    });
+  } else {
+    _gsap.TweenMax.to(timeline, .25, {
+      progress: "-=0.1"
+    });
+  }
+});
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -5646,7 +5657,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58831" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59373" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -5605,14 +5605,14 @@ divs.forEach(function (div) {
 
   document.body.appendChild(div);
 });
-document.addEventListener("click", function (event) {
-  var x = event.x,
-      y = event.y;
 
-  _gsap.TweenMax.to(divs, 1, {
-    x: x,
-    y: y
-  });
+_gsap.gsap.to(divs, 10, {
+  x: 100,
+  y: 100
+});
+
+document.addEventListener("click", function (event) {
+  _gsap.gsap.killTweensOf(event.target);
 }); // TweenMax.set("#box", {
 //     backgroundColor: "green",
 //     width: "50px",
@@ -5673,7 +5673,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53671" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54323" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

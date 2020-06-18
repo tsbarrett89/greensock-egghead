@@ -1,4 +1,4 @@
-import { TweenMax, TimelineMax } from 'gsap'
+import { TweenMax, gsap } from 'gsap'
 
 const divs = Array.from({length: 100}, () => 
     document.createElement('div')
@@ -18,10 +18,10 @@ divs.forEach(div => {
     document.body.appendChild(div)
 })
 
-document.addEventListener("click", event => {
-    const { x, y } = event
+gsap.to(divs, 10, { x: 100, y: 100 })
 
-    TweenMax.to(divs, 1, { x, y })
+document.addEventListener("click", event => {
+    gsap.killTweensOf(event.target)
 })
 
 

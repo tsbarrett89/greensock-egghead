@@ -5587,60 +5587,64 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-_gsap.TweenMax.set("#box", {
-  backgroundColor: "green",
-  width: "50px",
-  height: "50px",
-  x: "50px",
-  y: "50px"
+var divs = Array.from({
+  length: 100
+}, function () {
+  return document.createElement('div');
 });
+divs.forEach(function (div) {
+  _gsap.TweenMax.set(div, {
+    position: "absolute",
+    x: "".concat(Math.random() * window.innerWidth, "px"),
+    y: "".concat(Math.random() * window.innerHeight, "px"),
+    width: 20,
+    height: 20,
+    backgroundColor: 'green',
+    border: "3px solid black"
+  });
 
-var timeline = new _gsap.TimelineMax({
-  repeat: -1
+  document.body.appendChild(div);
 });
-timeline.pause();
-timeline.to("#box", 0.5, {
-  x: 100
-});
-timeline.to("#box", 0.5, {
-  y: 100
-});
-timeline.to("#box", 0.5, {
-  x: 50
-});
-timeline.to("#box", 0.5, {
-  y: 50
-});
-document.getElementById("box").addEventListener('click', function () {
-  if (timeline.isActive()) {
-    timeline.pause();
-  } else {
-    timeline.resume();
-  }
-});
-document.addEventListener('wheel', function (event) {
-  if (event.wheelDelta > 0) {
-    _gsap.TweenMax.to(timeline, .25, {
-      progress: "+=0.1"
-    });
-  } else {
-    _gsap.TweenMax.to(timeline, .25, {
-      progress: "-=0.1"
-    });
-  }
-});
-document.addEventListener('click', function (event) {
+document.addEventListener("click", function (event) {
   var x = event.x,
       y = event.y;
 
-  _gsap.TweenMax.fromTo('#box', 1, {
+  _gsap.TweenMax.to(divs, 1, {
     x: x,
     y: y
-  }, {
-    x: 200,
-    y: 200
   });
-});
+}); // TweenMax.set("#box", {
+//     backgroundColor: "green",
+//     width: "50px",
+//     height: "50px",
+//     x: "50px",
+//     y: "50px"
+// })
+// const timeline = new TimelineMax({ repeat: -1 })
+// timeline.pause()
+// timeline.to("#box", 0.5, { x: 100 })
+// timeline.to("#box", 0.5, { y: 100 })
+// timeline.to("#box", 0.5, { x: 50 })
+// timeline.to("#box", 0.5, { y: 50 })
+// document.getElementById("box").addEventListener('click', (e) => {
+//     e.stopPropagation()
+//     if(timeline.isActive()){
+//         timeline.pause()
+//     }else{
+//         timeline.resume()
+//     }
+// })
+// document.addEventListener('wheel', event => {
+//     if(event.wheelDelta > 0){
+//         TweenMax.to(timeline, .25, {progress: "+=0.1"})
+//     } else {
+//         TweenMax.to(timeline, .25, {progress: "-=0.1"})
+//     }
+// })
+// document.addEventListener('click', event => {
+//     const { x, y } = event
+//     TweenMax.fromTo('#box', 1, { x, y }, { x: 200, y: 200 })
+// })
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -5669,7 +5673,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59373" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53671" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

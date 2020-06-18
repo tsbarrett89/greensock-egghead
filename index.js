@@ -1,25 +1,9 @@
 import { TweenMax, gsap } from 'gsap'
 
-const divs = Array.from({length: 100}, () => 
-    document.createElement('div')
-)
+const box = document.createElement('div')
+box.setAttribute("class", "box")
+document.body.appendChild(box)
 
-divs.forEach(div => {
-    TweenMax.set(div, {
-        position: "absolute",
-        x: `${Math.random() * window.innerWidth}px`,
-        y: `${Math.random() * window.innerHeight}px`,
-        width: 20,
-        height: 20,
-        backgroundColor: 'green',
-        border: "3px solid black"
-    })
-    
-    document.body.appendChild(div)
-})
-
-gsap.to(divs, 10, { x: 100, y: 100 })
-
-document.addEventListener("click", event => {
-    gsap.killTweensOf(event.target)
+box.addEventListener("click", () => {
+    TweenMax.to(box, 1, { rotationY: "=+180" })
 })

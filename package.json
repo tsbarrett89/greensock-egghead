@@ -6,6 +6,6 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
-    "gsap": "^3.3.3"
+    "gsap": "^3.6.0"
   }
 }
